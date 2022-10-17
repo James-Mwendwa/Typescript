@@ -1,22 +1,23 @@
-var message = 'Hello World';
+"use strict";
+let message = 'Hello World';
 console.log(message);
-var heading = document.createElement('h1');
+let heading = document.createElement('h1');
 heading.textContent = message;
 document.body.appendChild(heading);
 //object type
-var employee;
+let employee;
 employee = {
     name: 'James',
     age: 25,
     jobTitle: 'SWE'
 };
 //storing mixed type
-var scores = [5, 'Design'];
+let scores = [5, 'Design'];
 console.log(scores);
 // Tuple type
 // number of elements in tuple is fixed
 // Order is very important
-var skill;
+let skill;
 skill = ['design', 5,];
 console.log(skill);
 // enum
@@ -38,7 +39,7 @@ var Month;
 })(Month || (Month = {}));
 ;
 function isItSummer(month) {
-    var isSummer;
+    let isSummer;
     switch (month) {
         case Month.Jun:
         case Month.Jul:
@@ -83,24 +84,19 @@ function multiplyNum(a, b, c) {
 }
 console.log(multiplyNum(2, 2));
 // tsc Default Parameters
-function applyDiscount(price, discount) {
-    if (discount === void 0) { discount = 0.05; }
+function applyDiscount(price, discount = 0.05) {
     return price * (1 - discount);
 }
 console.log(applyDiscount(100));
 // Rest parameter
-function getTotal() {
-    var numbers = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        numbers[_i] = arguments[_i];
-    }
-    var total = 0;
-    numbers.forEach(function (num) { return total += num; });
+function getTotal(...numbers) {
+    let total = 0;
+    numbers.forEach((num) => total += num);
     return total;
 }
 console.log(getTotal(20, 40));
 function addNum(a, b) {
     return a + b;
 }
-console.log(addNum(2, 3));
+console.log(addNum(20, 30));
 console.log(addNum('hello', 'james'));

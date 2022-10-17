@@ -152,5 +152,5 @@ function addNum(a: any, b: any): any {
    return a + b;
 }
 
-console.log(addNum(2,3));
+console.log(addNum(20,30));
 console.log(addNum('hello','james'));
