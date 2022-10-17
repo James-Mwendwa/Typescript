@@ -61,4 +61,46 @@ function add(a, b) {
         return a.concat(b);
     throw new Error('parameters must be numbers or strings');
 }
-console.log(add('hello', 6));
+console.log(add(6, 6));
+// Typescript Functions
+// function name (parameter: type, parameter: type): returnType {
+//  // do something
+// }
+function multiply(x, y) {
+    return x * y;
+}
+console.log(multiply(2, 3));
+// void
+function echo(message) {
+    console.log(message.toUpperCase());
+}
+// tsc optional parameters
+function multiplyNum(a, b, c) {
+    if (typeof c !== 'undefined') {
+        return a * b * c;
+    }
+    return a * b;
+}
+console.log(multiplyNum(2, 2));
+// tsc Default Parameters
+function applyDiscount(price, discount) {
+    if (discount === void 0) { discount = 0.05; }
+    return price * (1 - discount);
+}
+console.log(applyDiscount(100));
+// Rest parameter
+function getTotal() {
+    var numbers = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        numbers[_i] = arguments[_i];
+    }
+    var total = 0;
+    numbers.forEach(function (num) { return total += num; });
+    return total;
+}
+console.log(getTotal(20, 40));
+function addNum(a, b) {
+    return a + b;
+}
+console.log(addNum(2, 3));
+console.log(addNum('hello', 'james'));

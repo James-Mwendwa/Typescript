@@ -90,3 +90,67 @@ function add(a: any, b: any){
 }
 
 console.log(add(6,6));
+
+
+// Typescript Functions
+
+// function name (parameter: type, parameter: type): returnType {
+//  // do something
+// }
+
+function multiply(x: number, y: number): number {
+  return x * y
+}
+
+console.log(multiply(2,3))
+
+
+// void
+
+function echo(message: string): void {
+  console.log(message.toUpperCase())
+}
+
+// tsc optional parameters
+
+function multiplyNum(a: number, b: number, c?: number): number {
+  if( typeof c !=='undefined') {
+   return a * b * c
+  } 
+  return a * b 
+}
+
+console.log(multiplyNum(2,2));
+
+// tsc Default Parameters
+
+function applyDiscount (price:number, discount: number = 0.05): number {
+  return price * (1 - discount)
+}
+
+console.log(applyDiscount(100));
+
+
+// Rest parameter
+
+function getTotal( ...numbers: number[]): number {
+  let total = 0
+  numbers.forEach((num) => total+=num);
+   return total
+}
+
+console.log(getTotal(20,40));
+
+
+// tsc Function overloading
+  // enable you to establish the r/ship btw 
+  // parameter types and function return types
+
+function addNum(a: number, b: number): number;
+function addNum(a: string, b: string): string;
+function addNum(a: any, b: any): any {
+   return a + b;
+}
+
+console.log(addNum(2,3));
+console.log(addNum('hello','james'));
