@@ -154,3 +154,58 @@ function addNum(a: any, b: any): any {
 
 console.log(addNum(20,30));
 console.log(addNum('hello','james'));
+
+// tsc classes
+
+  // Access modifiers
+    // Private
+    // Protected
+    // Public
+
+    // Private modifier
+     // Access that property or method within the same class
+
+
+     class Person {
+      private ssn: string;
+      private firstName: string;
+      private lastName: string;
+
+       constructor (ssn: string, firstName: string, lastName: string) {
+        this.ssn = ssn
+        this.firstName = firstName
+        this.lastName = lastName
+       }
+
+       getFullName(): string {
+        return `${this.firstName} ${this.lastName}`
+       }
+
+  
+     }
+
+     // error: firstName is private only accessible within the class Person
+     
+//  const person = new Person('123', 'James', 'Mwendwa')
+//  console.log(person.firstName)
+
+
+
+// Interface
+
+interface Person {
+  name: string
+  jobTitle: string
+}
+
+function getName(person: Person) {
+  return `${person.name} is a ${person.jobTitle}`;
+
+}
+
+ let james = {
+    name: 'James',
+    jobTitle: 'Software Engineer'
+  }
+
+//console.log(getName(james));

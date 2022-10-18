@@ -100,3 +100,28 @@ function addNum(a, b) {
 }
 console.log(addNum(20, 30));
 console.log(addNum('hello', 'james'));
+// tsc classes
+// Access modifiers
+// Private
+// Protected
+// Public
+// Private modifier
+// Access that property or method within the same class
+class Person {
+    constructor(ssn, firstName, lastName) {
+        this.ssn = ssn;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+function getName(person) {
+    return `${person.name} is a ${person.jobTitle}`;
+}
+let james = {
+    name: 'James',
+    jobTitle: 'Software Engineer'
+};
+//console.log(getName(james));
