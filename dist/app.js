@@ -125,3 +125,22 @@ let james = {
     jobTitle: 'Software Engineer'
 };
 //console.log(getName(james));
+//tsc Generics
+// allow you to use types as formal parameters
+// it is type safe
+// use to avoid code duplication or drawback
+function getRandomNumberElement(items) {
+    let randomIndex = Math.floor(Math.random() * items.length);
+    return items[randomIndex];
+}
+//console.log(getRandomNumberElement([4,'apple', 1,3,'mango', 'dates','orange']))
+// USE GENERICS
+function getRandomElement(items) {
+    let randomIndex = Math.floor(Math.random() * items.length);
+    return items[randomIndex];
+}
+// use letter T as the type variable which is a convention
+// CALLING A GENERICS FUNCTION
+let numbers = [1, 2, 3, 4, 5];
+let randomEle = getRandomElement(numbers);
+console.log(randomEle);
